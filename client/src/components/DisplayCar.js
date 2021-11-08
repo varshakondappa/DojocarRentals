@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, navigate } from "@reach/router";
+import ReactImageMagnify from "react-image-magnify";
 
 const DisplayCars = (props) => {
   const [cars, setCars] = useState([]);
@@ -36,6 +37,9 @@ const DisplayCars = (props) => {
   const handleMain = () => {
     navigate("/main");
   };
+  // const handleImage=(id)=>{
+  //   style={{width:"100px",height:"100px"}}
+  // }
 
   return (
     <>
@@ -74,11 +78,11 @@ const DisplayCars = (props) => {
         <div className="row">
           <div className="col-10">
             <table className="table">
-              <thead>
+              <thead style={{ marginLeft: "-50px" }}>
                 <tr>
                   {" "}
                   <th>Car Images</th>
-                  <th>Car Name</th>
+                  <th>CarName</th>
                   <th>Specifications</th>
                   <th>Price</th>
                   <th>Time</th>
@@ -92,15 +96,40 @@ const DisplayCars = (props) => {
                   .map((element, index) => (
                     <tr key={index}>
                       {/* <td>{element.carImg}</td> */}
+                      {/* <Link> */}
                       <td>
-                        {element.carImg && (
-                          <img
-                            className="table-img"
-                            src={element.carImg}
-                            alt=""
-                          />
-                        )}
+                        <div
+                          style={{
+                            width: "250px",
+                            height: "190px",
+                          }}
+                        >
+                          <ReactImageMagnify
+                            {...{
+                              smallImage: {
+                                alt: "Car Images",
+                                isFluidWidth: true,
+                                src: element.carImg,
+                              },
+                              largeImage: {
+                                src: element.carImg,
+                                width: 600,
+                                height: 600,
+                              },
+                            }}
+                          />{" "}
+                        </div>
+                        {/* <p>
+                          {element.carImg && (
+                            <img
+                              className="table-img"
+                              src={element.carImg}
+                              alt=""
+                            />
+                          )}
+                        </p> */}
                       </td>
+
                       <td>{element.carName}</td>
                       <td>{element.specifications}</td>
                       <td>{element.price}</td>
@@ -122,8 +151,8 @@ const DisplayCars = (props) => {
                       </td>
                       <td>
                         <button
-                          className="btn btn-primary"
-                          style={{ background: "green" }}
+                          className="btn btn-success"
+                          style={{ marginLeft: "-70px" }}
                         >
                           <Link
                             style={{ color: "white" }}
@@ -147,6 +176,7 @@ const DisplayCars = (props) => {
                           EDIT
                         </button> */}
                         <button
+                          style={{ marginLeft: "150px", marginTop: "-70px" }}
                           onClick={() => handleDelete(element._id, index)}
                           type="button"
                           className="btn btn-danger"

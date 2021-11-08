@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const ReviewSchema = new mongoose.Schema(
   {
+    ratingValue: {
+      type: String,
+    },
     userName: {
       type: String,
       required: [true, "User Name is required"],

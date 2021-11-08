@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, navigate } from "@reach/router";
+import Rating from "./Rating";
+// import { FaStar } from "react-icons/fa";
 
 const ReviewForm = (e) => {
   const [userName, setUserName] = useState("");
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState({});
+  const [rating, setRating] = useState(null);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -36,6 +39,7 @@ const ReviewForm = (e) => {
         <div className="col">
           <form onSubmit={submitHandler}>
             <h1>ADD REVIEW</h1>
+            <Rating></Rating>
             <div>
               <label className="form-label">USER NAME:</label>
               <br></br>

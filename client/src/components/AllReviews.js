@@ -71,7 +71,7 @@ const AllReviews = (props) => {
               .sort((a, b) => a.userName.localeCompare(b.userName))
               .map((element, index) => (
                 <p key={index}>
-                  <Rating />
+                  <Rating></Rating>
                   {element.userName} :<br></br>
                   {element.review}
                   <button

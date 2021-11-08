@@ -12,6 +12,8 @@ import Details from "./components/Details";
 import ReviewForm from "./components/ReviewForm";
 import AllReviews from "./components/AllReviews";
 import EditReview from "./components/EditReview";
+import About from "./components/About";
+import Images from "./components/Images";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         <ReviewForm path="/addReview"></ReviewForm>
         <AllReviews path="/reviews"></AllReviews>
         <EditReview path="/editReview/:id"></EditReview>
+        <About path="/about"></About>
+        <Images path="/images"></Images>
       </Router>
       {/* </div> */}
     </div>
