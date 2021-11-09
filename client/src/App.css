@@ -52,9 +52,9 @@
 .images {
   height: 500px;
   width: 1000px;
-  border: 2px;
-  border-radius: 20px;
-  margin-left: 110px;
+  border: 1px;
+  border-radius: 100px;
+  margin-left: 140px;
   margin-top: 40px;
 }
 

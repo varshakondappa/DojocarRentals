@@ -10,7 +10,7 @@ const Main = () => {
       )
       .then((response) => {
         console.log(response.data.message);
-        navigate("/home");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err.response.data.errors);
